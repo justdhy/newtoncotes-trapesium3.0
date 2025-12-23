@@ -31,7 +31,6 @@ public:
     QLineEdit *lineEdit_f0fn;
     QPushButton *pushButton_back;
     QLineEdit *lineEdit_galatabs;
-    QLabel *label_judul3;
     QTableWidget *tableWidget_iterasi;
     QLabel *label_galatexact;
     QLabel *label_galatabs;
@@ -42,6 +41,9 @@ public:
     QLabel *label_f0fn;
     QLineEdit *lineEdit_sigmaf1fn;
     QLabel *label_galatrelatif;
+    QLabel *label_3;
+    QLabel *label;
+    QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -74,15 +76,6 @@ public:
         lineEdit_galatabs = new QLineEdit(centralwidget);
         lineEdit_galatabs->setObjectName("lineEdit_galatabs");
         lineEdit_galatabs->setGeometry(QRect(750, 740, 120, 40));
-        label_judul3 = new QLabel(centralwidget);
-        label_judul3->setObjectName("label_judul3");
-        label_judul3->setGeometry(QRect(190, 30, 591, 41));
-        QFont font2;
-        font2.setPointSize(28);
-        font2.setBold(true);
-        label_judul3->setFont(font2);
-        label_judul3->setFrameShadow(QFrame::Shadow::Sunken);
-        label_judul3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tableWidget_iterasi = new QTableWidget(centralwidget);
         if (tableWidget_iterasi->columnCount() < 3)
             tableWidget_iterasi->setColumnCount(3);
@@ -93,7 +86,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         tableWidget_iterasi->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tableWidget_iterasi->setObjectName("tableWidget_iterasi");
-        tableWidget_iterasi->setGeometry(QRect(110, 110, 800, 500));
+        tableWidget_iterasi->setGeometry(QRect(100, 200, 800, 441));
         label_galatexact = new QLabel(centralwidget);
         label_galatexact->setObjectName("label_galatexact");
         label_galatexact->setGeometry(QRect(590, 680, 150, 40));
@@ -126,6 +119,28 @@ public:
         label_galatrelatif->setObjectName("label_galatrelatif");
         label_galatrelatif->setGeometry(QRect(590, 800, 150, 40));
         label_galatrelatif->setFont(font);
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(0, 130, 1001, 51));
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(true);
+        label_3->setFont(font2);
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(180, 10, 680, 100));
+        QFont font3;
+        font3.setPointSize(18);
+        font3.setBold(true);
+        label->setFont(font3);
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label->setWordWrap(true);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(0, 100, 1001, 51));
+        label_2->setFont(font2);
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainWindow3->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow3);
         menubar->setObjectName("menubar");
@@ -145,7 +160,6 @@ public:
         MainWindow3->setWindowTitle(QCoreApplication::translate("MainWindow3", "MainWindow", nullptr));
         label_hasilnumerik->setText(QCoreApplication::translate("MainWindow3", "Hasil Integrasi Numerik", nullptr));
         pushButton_back->setText(QCoreApplication::translate("MainWindow3", "<", nullptr));
-        label_judul3->setText(QCoreApplication::translate("MainWindow3", "DETAIL PERHITUNGAN", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget_iterasi->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow3", "i", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget_iterasi->horizontalHeaderItem(1);
@@ -157,6 +171,9 @@ public:
         label_sigmaf1fn->setText(QCoreApplication::translate("MainWindow3", "\316\243F1 + Fn-1", nullptr));
         label_f0fn->setText(QCoreApplication::translate("MainWindow3", "F0 + Fn", nullptr));
         label_galatrelatif->setText(QCoreApplication::translate("MainWindow3", "Galat Relatif", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow3", "I Nyoman Yogi Putra Arthawan (2415101060)", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow3", "PROGRAM PERHITUNGAN NEWTON COTES: METODE TRAPESIUM", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow3", "I Gede Nyoman Arya Adi Prima Merta (2415101024)", nullptr));
     } // retranslateUi
 
 };

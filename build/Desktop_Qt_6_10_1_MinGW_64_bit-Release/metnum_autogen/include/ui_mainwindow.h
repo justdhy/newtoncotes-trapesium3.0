@@ -28,6 +28,8 @@ public:
     QPushButton *tombol_Keluar;
     QLabel *label_judul;
     QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +63,23 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(780, 890, 211, 51));
+        QFont font2;
+        font2.setPointSize(6);
+        label->setFont(font2);
+        label->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(0, 780, 1001, 51));
+        QFont font3;
+        font3.setPointSize(12);
+        font3.setBold(true);
+        label_2->setFont(font3);
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(0, 820, 1001, 51));
+        label_3->setFont(font3);
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -82,6 +101,8 @@ public:
         tombol_Keluar->setText(QCoreApplication::translate("MainWindow", "KELUAR", nullptr));
         label_judul->setText(QCoreApplication::translate("MainWindow", "PROGRAM PERHITUNGAN NEWTON COTES: METODE TRAPESIUM", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Created by Yogi & Dhy (2025)", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "I Gede Nyoman Arya Adi Prima Merta (2415101024)", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "I Nyoman Yogi Putra Arthawan (2415101060)", nullptr));
     } // retranslateUi
 
 };

@@ -56,6 +56,21 @@ void MainWindow2::on_pushButton_hitung_clicked()
     if (h <= 0) {
         QMessageBox::warning(this, "Input Error", "Lebar pias (h) harus lebih besar dari 0!");
         return;
+    } if (a >= b){
+        QMessageBox::warning(this, "Input error", "Nilai a (batas bawah) harus lebih kecil daripada b (batas atas)!");
+        return;
+    }
+
+    //validasi input specialcase nomor 4
+    if (a == 0 && (rumusQ.contains("ln", Qt::CaseInsensitive))) {
+
+        QMessageBox::critical(this, "Input Error",
+                              "Tidak dapat menghitung fungsi ln apabila a bernilai 0");
+        ui->lineEdit_hasilpias->setText("-");
+        ui->lineEdit_hasilnumerik->setText("-");
+        ui->lineEdit_galatrelatif->setText("-");
+        mw3->hapusData();
+        return;
     }
 
     //hitung_integrasinumerik
@@ -69,12 +84,12 @@ void MainWindow2::on_pushButton_hitung_clicked()
     ui->lineEdit_hasilpias->setText(QString::number(integral.getN()));
     ui->lineEdit_hasilnumerik->setText(QString::number(integral.getHasil(), 'f', 4));
 
+    //munculkan hasil perhitungan galat
     if (errorCalc.isValid()) {
         ui->lineEdit_galatrelatif->setText(QString::number(errorCalc.getRelatif(), 'f', 4) + " %");
     } else {
         ui->lineEdit_galatrelatif->setText("-");
     }
-
     mw3->setValues(integral, errorCalc);
 }
 
@@ -82,7 +97,7 @@ void MainWindow2::on_pushButton_hitung_clicked()
 void MainWindow2::on_pushButton_detail_clicked()
 {
     mw3->show();
-    this->hide();
+    // this->hide();
 }
 
 //fungsi tombol hapus

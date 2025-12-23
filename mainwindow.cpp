@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_tombol_Kalkulasi_clicked()
 {
-    MainWindow2 *w = new MainWindow2();
+    MainWindow2 *w = new MainWindow2(); //pindah ke window input fungsi w2
     w->setAttribute(Qt::WA_DeleteOnClose);
     connect(w, &MainWindow2::backToMenu, this, &MainWindow::show);
     w->show();

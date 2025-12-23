@@ -18,12 +18,14 @@ void Galat::hitung(std::string rumusExact, double a, double b, double hasilNumer
     MathParser parser;
 
     // F(b) - F(a)
-    double Fa = parser.evaluate(rumusExact, a);
-    double Fb = parser.evaluate(rumusExact, b);
+    double Fa = parser.evaluate(rumusExact, a); //batas bawah dikali dengan integralnya
+    double Fb = parser.evaluate(rumusExact, b); //batas atas  dikali dengan integralnya
 
     nilaiExact = Fb - Fa;
-    galatAbsolut = std::abs(nilaiExact - hasilNumerik);
 
+    galatAbsolut = std::abs(nilaiExact - hasilNumerik); //perhitungan nilai absolut
+
+    //kondisi untuk mendapatkan persentase galat
     if (std::abs(nilaiExact) > 1e-9) {
         galatRelatif = (galatAbsolut / std::abs(nilaiExact)) * 100.0;
     } else {

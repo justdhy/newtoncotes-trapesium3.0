@@ -52,19 +52,19 @@ class MathParser {
         while (peek() == '*' || peek() == '/' || peek() == '^') {
             char op = get();
             double rhs = factor();
-            if (op == '*') result *= rhs;
-            else if (op == '/') result /= rhs;
-            else if (op == '^') result = pow(result, rhs);
+            if (op == '*') result *= rhs; //perkalian
+            else if (op == '/') result /= rhs; //pembagian
+            else if (op == '^') result = pow(result, rhs); //pangkat
         }
         return result;
     }
     double expression() {
-        double result = term();
-        while (peek() == '+' || peek() == '-') {
+        double result = term(); //result = bagian kiri (left hand)
+        while (peek() == '+' || peek() == '-') { //operator
             char op = get();
-            double rhs = term();
-            if (op == '+') result += rhs;
-            else if (op == '-') result -= rhs;
+            double rhs = term(); //rhs = right hand (bagian kanana)
+            if (op == '+') result += rhs; //(kanan + kiri);
+            else if (op == '-') result -= rhs; //(kanan - kiri);
         }
         return result;
     }
